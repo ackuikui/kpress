@@ -11,7 +11,7 @@ const press = require('../build.js')
 let config = {
   docs: path.resolve(pwd, 'docs' ),
   dest: path.resolve(pwd, 'blog' ),
-  sub: 'blog'
+  sub: '/blog'
 }
 console.log("src:" + config.docs);
 console.log("dest:" + config.dest);

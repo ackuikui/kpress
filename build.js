@@ -4,7 +4,19 @@ const fs = require('fs-extra')
 const path = require('path')
 const webpack = require('webpack')
 const { createBundleRenderer } = require('vue-server-renderer')
-const md = require('markdown-it')();
+
+var hljs = require('highlight.js');
+const md = require('markdown-it')({
+    highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+            try {
+                return hljs.highlight(str, { language: lang }).value;
+            } catch (__) { }
+        }
+        return ''; // use external default escaping
+    }
+});
+
 
 const serverConfig = require('./webpack.config.server.js')
 const createClientConfig = require('./webpack.config.client.js')
@@ -44,6 +56,7 @@ const context = {
         <meta name="keyword" content="vue,ssr">
         <meta name="description" content="vue srr demo">
     `,
+    sub: '/blog'
 };
 
 // ssr静态页面 配置
@@ -64,7 +77,7 @@ function createRender(config) {
 // let config = {
 //     docs: path.resolve(pwd, 'docs' ),
 //     dest: path.resolve(pwd, 'blog' ),
-//     sub: 'blog'
+//     sub: '/blog'
 // }
 async function press(config) {
     let clientConfig = createClientConfig(config)
@@ -82,6 +95,7 @@ async function press(config) {
 
         // md-html write to html use ssr template
         context.docHtml = docHtml
+        context.sub = config.sub
         renderer.renderToString(context, async (err, html) => {
             if (err) throw err
             let destFile = path.resolve(config.dest, file.replace(/.md$/, '.html'))

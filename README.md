@@ -5,8 +5,8 @@ kpress use for generate ssg blog, study base on vuepress source code
 `npm i kpress`
 
 ## mkdir(docs) and create one md file
-/docs/
-  hello.md
+/docs/  
+&nbsp;&nbsp;hello.md  
 
 ## add npm script use kpress command in package.json
 ``` json
@@ -17,6 +17,6 @@ kpress use for generate ssg blog, study base on vuepress source code
 
 ## build generate fil'blog' 
 `npm run build`
-/blog/
-   hello.html
-   /assets/
+/blog/  
+&nbsp;&nbsp;hello.html  
+&nbsp;&nbsp;/assets/  
