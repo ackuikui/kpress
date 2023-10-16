@@ -1,0 +1,35 @@
+{
+  "name": "kpress",
+  "version": "1.0.0",
+  "description": "generate ssg blog with md file",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ackuikui/kpress.git"
+  },
+  "main": "index.js",
+  "bin": {
+    "kpress": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "md",
+    "ssg",
+    "blog"
+  ],
+  "author": "ackuikui",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-it": "^13.0.1",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-router": "^3.4.5",
+    "vue-server-renderer": "^2.7.14"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "globby": "^13.2.2"
+  }
+}
