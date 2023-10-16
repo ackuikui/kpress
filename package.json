@@ -1,6 +1,6 @@
 {
   "name": "kpress",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "generate ssg blog with md file",
   "repository": {
     "type": "git",
@@ -25,11 +25,12 @@
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-router": "^3.4.5",
-    "vue-server-renderer": "^2.7.14"
-  },
-  "devDependencies": {
+    "vue-server-renderer": "^2.7.14",
     "copy-webpack-plugin": "^11.0.0",
     "fs-extra": "^11.1.1",
     "globby": "^13.2.2"
+  },
+  "devDependencies": {
+
   }
 }
