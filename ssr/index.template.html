@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head><title>{{title}}</title>
-  
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
   <link rel="stylesheet" href="{{sub}}/github-dark-dimmed.css">
   <style>
-    .hljs {
+    .markdown-body a {
+      text-decoration: none;
+    }
+    .markdown-body img{
+      max-width: 80%;
+      max-height: 300px;
+    }
+    .markdown-body .hljs {
       padding: 16px;
       overflow: auto;
       line-height: 1.45;
@@ -13,7 +20,9 @@
   </style>
   </head>
   <body>
-    {{{docHtml}}}
+    <div class="markdown-body">
+      {{{docHtml}}}
+    </div>
     <!--vue-ssr-outlet-->
   </body>
 </html>
