@@ -6,17 +6,19 @@ const webpack = require('webpack')
 const { createBundleRenderer } = require('vue-server-renderer')
 
 var hljs = require('highlight.js');
-const md = require('markdown-it')({
+var md = require('markdown-it')({
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
-                return hljs.highlight(str, { language: lang }).value;
+                return '<pre class="hljs"><code>' +
+                    hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+                    '</code></pre>';
             } catch (__) { }
         }
-        return ''; // use external default escaping
+
+        return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
 });
-
 
 const serverConfig = require('./webpack.config.server.js')
 const createClientConfig = require('./webpack.config.client.js')
