@@ -7,6 +7,7 @@ const { createBundleRenderer } = require('vue-server-renderer')
 
 var hljs = require('highlight.js');
 var md = require('markdown-it')({
+    breaks: true,
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {

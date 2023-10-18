@@ -1,6 +1,6 @@
 {
   "name": "kpress",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "generate ssg blog with md file",
   "repository": {
     "type": "git",
